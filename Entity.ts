@@ -11,7 +11,8 @@ export class Entity {
 
   distanceTo(other: Entity): number {
     return Math.sqrt(
-      (this.x - other.x) ** 2 + (this.y - other.y) ** 2
+      (this.x - other.x) ** 2 +
+      (this.y - other.y) ** 2
     );
   }
 
@@ -19,6 +20,8 @@ export class Entity {
     const dx = target.x - this.x;
     const dy = target.y - this.y;
     const dist = Math.sqrt(dx * dx + dy * dy);
+
+    if (dist === 0) return;
 
     this.x += (dx / dist) * speed;
     this.y += (dy / dist) * speed;

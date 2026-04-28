@@ -17,6 +17,8 @@ class Entity {
     const dy = target.y - this.y;
     const dist = Math.sqrt(dx * dx + dy * dy);
 
+    if (dist === 0) return;
+
     this.x += (dx / dist) * speed;
     this.y += (dy / dist) * speed;
   }

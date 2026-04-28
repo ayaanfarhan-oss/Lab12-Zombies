@@ -4,7 +4,7 @@ export class Simulation {
   entities: Entity[] = [];
 
   constructor() {
-    // spawn humans
+    // humans
     for (let i = 0; i < 30; i++) {
       this.entities.push(
         new Entity(
@@ -15,7 +15,7 @@ export class Simulation {
       );
     }
 
-    // spawn 1 zombie
+    // 1 zombie
     this.entities.push(new Entity(400, 300, true));
   }
 
